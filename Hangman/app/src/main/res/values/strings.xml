@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Hangman</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hint_new_letter">Enter a letter</string>
+    <string name="hint_restart">Press restart</string>
+
+    <string name="you_win">Well done!</string>
+    <string name="you_lose">Too bad.</string>
+
+    <string name="go_button">Go</string>
+    <string name="restart_button">Restart</string>
+
+</resources>
