@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="welcome">Welcome to Tic Tac Toe!</string>
+
+    <string name="menu_button">Menu</string>
+    <string name="restart_button">Restart</string>
+    <string name="one_player">1 player</string>
+    <string name="two_player">2 player</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="player1turn">Player 1 plays (X)</string>
+    <string name="player2turn">Player 2 plays (O)</string>
+    <string name="your_turn">Your turn</string>
+    <string name="comp_turn">The computer thinks...</string>
+
+    <string name="player1win">Player 1 wins!</string>
+    <string name="player2win">Player 2 wins!</string>
+    <string name="you_win">You win!</string>
+    <string name="you_lose">You lose!</string>
+    <string name="its_a_tie">Tie.</string>
+
+    <string name="set_empty"> </string>
+    <string name="set_x">X</string>
+    <string name="set_o">O</string>
+
+</resources>

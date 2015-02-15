@@ -1,0 +1,167 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:gravity="center_horizontal"
+    android:id="@+id/main"
+    android:background="@drawable/blue_background">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:padding="10dp"
+        android:id="@+id/gridLayout"
+        android:layout_below="@+id/restart_button"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button11"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="11"
+            />
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button21"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="21"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button31"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="31"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button12"
+            android:layout_gravity="center"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="12"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button22"
+            android:layout_gravity="center"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="22"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button32"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="32"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button13"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="13"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button23"
+            android:onClick="button_pressed"
+            android:tag="23"
+            android:background="@color/secondary_text_default_material_dark"/>
+        <Button
+            android:height="90dp"
+            android:width="90dp"
+            android:layout_margin="5dp"
+            android:textSize="40sp"
+            android:id="@+id/button33"
+            android:onClick="button_pressed"
+            android:background="@color/secondary_text_default_material_dark"
+            android:tag="33"/>
+        </GridLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="@string/restart_button"
+        android:id="@+id/restart_button"
+        android:padding="10dp"
+        android:onClick="restart_button_clicked"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/material_deep_teal_500" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/welcome"
+        android:id="@+id/advice_text"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/gridLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/one_player"
+        android:layout_margin="5dp"
+        android:id="@+id/one_player_button"
+        android:padding="10dp"
+        android:background="@color/material_deep_teal_500"
+        android:onClick="player_chosen"
+        android:layout_below="@+id/advice_text"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/two_player"
+        android:layout_margin="5dp"
+        android:id="@+id/two_player_button"
+        android:padding="10dp"
+        android:onClick="player_chosen"
+        android:background="@color/material_deep_teal_500"
+        android:layout_below="@+id/one_player_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_button"
+        android:visibility="invisible"
+        android:id="@+id/to_menu"
+        android:padding="10dp"
+        android:onClick="go_to_menu"
+        android:background="@color/material_deep_teal_500"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
