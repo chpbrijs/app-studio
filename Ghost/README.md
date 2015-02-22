@@ -18,6 +18,11 @@ This app has the following features:
 #### Sketches
 
 Opening screen:
+
+<img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
+
+Choose names for the players:
+
 <img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
 
 
