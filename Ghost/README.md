@@ -17,9 +17,7 @@ This app has the following features:
 
 #### Sketches
 
-![My image](doc/IMAG1028.jpg)
-
-<img src='doc/IMAG1029.jpg'/>
+<img src='doc/IMAG1028-small.jpg'/>
 
 
 
