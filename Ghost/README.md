@@ -17,13 +17,19 @@ This app has the following features:
 
 #### Sketches
 
-Opening screen:
+1. Opening screen:
 
 <img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
 
-Choose names for the players:
+2. Choose names for the players:
 
-<img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
+<img src='doc/IMAG1029.jpg' width = '200', height = '350'/>
 
+3a. Playing the game. The current player's name is shown above the current state of the word. The current player must choose a certain alphabetical character.
 
+<img src='doc/IMAG1030.jpg' width = '200', height = '350'/>
+
+3b. In the options menu the game can be restarted. Also the names and the language can be changed.
+
+<img src='doc/IMAG1031.jpg' width = '200', height = '350'/> <img src='doc/IMAG1032.jpg' width = '200', height = '350'/>
 
