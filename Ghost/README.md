@@ -17,7 +17,7 @@ This app has the following features:
 
 #### Sketches
 
-![My image](https://github.com/chpbrijs/app-studio/tree/master/Ghost/doc/IMAG1028.jpg)
+![My image](doc/IMAG1028.jpg)
 
 
 
