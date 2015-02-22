@@ -17,10 +17,5 @@ This app has the following features:
 
 #### Sketches
 
-BLABLAALBJSHB
-![Alt text](https://github.com/chpbrijs/app-studio/tree/master/Ghost%20Storyboard/IMAG1028.jpg)
-
-sdjhsbdfj
-
 
 
