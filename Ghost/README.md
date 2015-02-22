@@ -17,5 +17,7 @@ This app has the following features:
 
 #### Sketches
 
+![Alt text](/doc/IMAG1028.jpg)
+
 
 
