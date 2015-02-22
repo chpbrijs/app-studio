@@ -15,6 +15,10 @@ This app has the following features:
 6.  The app works with an SDK API level of 21 (Android 5).
 7.  The app can be used on smartphones and tablets.
 
+#### Sketches
+
+![Alt text](https://github.com/chpbrijs/app-studio/tree/master/Ghost%20Storyboard/IMAG1028.jpg)
+
 
 
 
