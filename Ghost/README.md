@@ -19,5 +19,7 @@ This app has the following features:
 
 ![My image](doc/IMAG1028.jpg)
 
+<img src='doc/IMAG1029.jpg'/>
+
 
 
