@@ -17,7 +17,8 @@ This app has the following features:
 
 #### Sketches
 
-<img src='doc/IMAG1028.jpg' width = '150', height = '250'/>
+Opening screen:
+<img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
 
 
 
