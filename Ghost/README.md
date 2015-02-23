@@ -25,11 +25,18 @@ This app has the following features:
 
 <img src='doc/IMAG1029.jpg' width = '200', height = '350'/>
 
-3a. Playing the game. The current player's name is shown above the current state of the word. The current player must choose a certain alphabetical character.
+3. Playing the game. The current player's name is shown above the current state of the word. The current player must choose a certain alphabetical character.
 
 <img src='doc/IMAG1030.jpg' width = '200', height = '350'/>
 
-3b. In the options menu the game can be restarted. Also the names and the language can be changed.
+In the options menu the game can be restarted. Also the names and the language can be changed.
 
 <img src='doc/IMAG1031.jpg' width = '200', height = '350'/> <img src='doc/IMAG1032.jpg' width = '200', height = '350'/>
 
+4. This player has won and will know the place in the highscores list. The game can be restarted immediately.
+
+<img src='doc/IMAG1033.jpg' width = '200', height = '350'/>
+
+5. If the winning player wants to view the highscores, the corresponding button can be clicked, which leads to the following screen.
+
+<img src='doc/IMAG1034.jpg' width = '200', height = '350'/>
