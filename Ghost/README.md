@@ -17,15 +17,15 @@ This app has the following features:
 
 #### Sketches
 
-1. Opening screen:
+Screen 1: Opening screen
 
 <img src='doc/IMAG1028.jpg' width = '200', height = '350'/>
 
-2. Choose names for the players:
+Screen 2: Choose names for the players
 
 <img src='doc/IMAG1029.jpg' width = '200', height = '350'/>
 
-3. Playing the game. The current player's name is shown above the current state of the word. The current player must choose a certain alphabetical character.
+Screen 3: Playing the game. The current player's name is shown above the current state of the word. The current player must choose a certain alphabetical character.
 
 <img src='doc/IMAG1030.jpg' width = '200', height = '350'/>
 
@@ -33,10 +33,10 @@ In the options menu the game can be restarted. Also the names and the language c
 
 <img src='doc/IMAG1031.jpg' width = '200', height = '350'/> <img src='doc/IMAG1032.jpg' width = '200', height = '350'/>
 
-4. This player has won and will know the place in the highscores list. The game can be restarted immediately.
+Screen 4: End of game. A player has won and will know the place in the highscores list. The game can be restarted immediately.
 
 <img src='doc/IMAG1033.jpg' width = '200', height = '350'/>
 
-5. If the winning player wants to view the highscores, the corresponding button can be clicked, which leads to the following screen.
+Screen 5: Highscores. If the winning player wants to view the highscores, the corresponding button can be clicked, which leads to the following screen.
 
 <img src='doc/IMAG1034.jpg' width = '200', height = '350'/>
