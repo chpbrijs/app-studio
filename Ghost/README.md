@@ -37,6 +37,6 @@ Screen 4: End of game. A player has won and will know the place in the highscore
 
 <img src='doc/IMAG1033.jpg' width = '200', height = '350'/>
 
-Screen 5: Highscores. If the winning player wants to view the highscores, the corresponding button can be clicked, which leads to the following screen.
+Screen 5: Highscores. If the winning player wants to view the highscores, the corresponding button in screen 4 can be clicked, which leads to the following screen.
 
 <img src='doc/IMAG1034.jpg' width = '200', height = '350'/>
