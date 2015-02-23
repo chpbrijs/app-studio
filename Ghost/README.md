@@ -11,7 +11,6 @@ This app has the following features:
 3.  The players take turns on choosing a letter via an on-screen keyboard. 
 4.  There is a choice of dictionaries: English and Dutch.
 5.  The option menu provides possibilities to change names, change the language or restart the game.
-6.  The app works with an SDK API level of 21 (Android 5).
 7.  The app can be used on smartphones and tablets.
 
 #### Sketches
