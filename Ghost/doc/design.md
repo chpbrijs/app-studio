@@ -9,11 +9,13 @@
 Views:
 * TextView: title
 * Button: 'Start'. 
-* * Calls onStartButtonClick()
+
+Calls onStartButtonClick()
 
 Methods:
-* void onStartButtonClick()
-* * goes to SetNamesScreen
+* <p> void onStartButtonClick()
+
+goes to SetNamesScreen </p>
 
 #### Screen 2: SetNamesScreen
 
