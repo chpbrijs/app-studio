@@ -130,7 +130,7 @@ Views:
 1.  TextView: 'High scores'
 2.  TextView: position, name, score
     1.  only the five highest scores are shown
-    2.  if there are less than five available, the TextView remains empty
+    2.  if there are less than five available, only show those available
 3.  Button: 'new game'. Calls startNewGame().
 
 Methods:
