@@ -24,13 +24,13 @@ Views:
 
 1.  TextView: 'Enter your names'
 2.  Spinner 1: contains all names ever used
-3.  Spinner 2: contains all names ever used, except for the one in spinner 1.
+3.  Spinner 2: contains all names ever used
 4.  Button: 'Go'. Calls startNewGameWithNames()
 
 Methods:
 
 1.  void startNewGameWithNames(). 
-    1.   Saves the names in public strings list
+    1.   Saves the names (if valid and not the same) in public strings list
     2.   Calls startNewGame()
 2.  void startNewGame(). 
     1.   Chooses random player
@@ -40,6 +40,17 @@ Methods:
 #### Screen 3: MainActivity
 
 <img src='IMAG1030.jpg' width = '200', height = '350'/>
+
+Variables:
+
+1.  public String current_word
+2.  public String[] current_player_names
+3.  public Boolean player2turn 
+    1.  0 if it's player1's turn and 1 if it's player2's turn
+4.  public final List<String> dictionary_en
+5.  public final List<String> dictionary_nl
+6.  public Hashtable name_score_pairs
+7.  public String[] player_ranking
 
 Views:
 
@@ -62,7 +73,7 @@ Methods:
 3.  void makeMove(int letter). 
     1.  call checkValidLetter(letter)
     2.  call addLetterToWord(letter)
-    3.  call checkForLost()<
+    3.  call checkForLost()
         1.  if not lost:
             1.  setNextPlayer()
         2.  else:
@@ -79,12 +90,18 @@ Methods:
 7.  void setNextPlayer()
     1.  change the name in the TextView
     2.  change the colour
+8. void editHighScores()
+    1.  
 
 #### Screen 4: WinScreen
 
 <img src='IMAG1033.jpg' width = '200', height = '350'/>
 
 Views:
+
+1.  TextView: display the winner's name
+2.  TextView: state the reason for winning
+3.  TextView: show the current place in the high score list
 
 Methods:
 
