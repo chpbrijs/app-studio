@@ -7,22 +7,22 @@
 <img src='IMAG1028.jpg' width = '200', height = '350'/>
 
 Views:<br /> 
-1.  TextView: title
-2.  Button: 'Start'. Calls onStartButtonClick()
+1.  TextView: title<br /> 
+2.  Button: 'Start'. Calls onStartButtonClick()<br /> 
 
 Methods:<br /> 
 1.  void onStartButtonClick(). <br /> 
-    - Goes to SetNamesScreen 
+    - Goes to SetNamesScreen <br /> 
 
 #### Screen 2: SetNamesScreen
 
 <img src='IMAG1029.jpg' width = '200', height = '350'/>
 
 Views:<br /> 
-1.  TextView: 'Enter your names'
-2.  Spinner 1: contains all names ever used
-3.  Spinner 2: contains all names ever used, except for the one in spinner 1.
-4.  Button: 'Go'. Calls startNewGameWithNames()
+1.  TextView: 'Enter your names'<br /> 
+2.  Spinner 1: contains all names ever used<br /> 
+3.  Spinner 2: contains all names ever used, except for the one in spinner 1.<br /> 
+4.  Button: 'Go'. Calls startNewGameWithNames()<br /> 
 
 Methods:<br /> 
 1.  void startNewGameWithNames(). <br /> 
