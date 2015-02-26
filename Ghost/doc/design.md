@@ -24,14 +24,15 @@ Views:<br />
 3.  Spinner 2: contains all names ever used, except for the one in spinner 1.<br /> 
 4.  Button: 'Go'. Calls startNewGameWithNames()<br /> 
 
-Methods:<br /> 
-1.  void startNewGameWithNames(). <br /> 
-    -   Saves the names in public strings list<br /> 
-    -   Calls startNewGame()<br /> 
-2.  void startNewGame(). <br /> 
-    -   Chooses random player<br /> 
-    -   Initializes word<br /> 
-    -   Goes to MainActivity<br /> 
+Methods:
+
+1.  void startNewGameWithNames(). 
+    1.   Saves the names in public strings list
+    2.   Calls startNewGame()
+2.  void startNewGame(). 
+    1.   Chooses random player
+    2.   Initializes word 
+    3.   Goes to MainActivity
 
 #### Screen 3: MainActivity
 
