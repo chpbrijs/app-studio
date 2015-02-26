@@ -6,23 +6,26 @@
 
 <img src='IMAG1028.jpg' width = '200', height = '350'/>
 
-Views:<br /> 
-1.  TextView: title<br /> 
-2.  Button: 'Start'. Calls onStartButtonClick()<br /> 
+Views:
 
-Methods:<br /> 
-1.  void onStartButtonClick(). <br /> 
-    - Goes to SetNamesScreen <br /> 
+1.  TextView: title
+2.  Button: 'Start'. Calls onStartButtonClick()
+
+Methods:
+
+1.  void onStartButtonClick(). 
+    1.  Goes to SetNamesScreen
 
 #### Screen 2: SetNamesScreen
 
 <img src='IMAG1029.jpg' width = '200', height = '350'/>
 
-Views:<br /> 
-1.  TextView: 'Enter your names'<br /> 
-2.  Spinner 1: contains all names ever used<br /> 
-3.  Spinner 2: contains all names ever used, except for the one in spinner 1.<br /> 
-4.  Button: 'Go'. Calls startNewGameWithNames()<br /> 
+Views:
+
+1.  TextView: 'Enter your names'
+2.  Spinner 1: contains all names ever used
+3.  Spinner 2: contains all names ever used, except for the one in spinner 1.
+4.  Button: 'Go'. Calls startNewGameWithNames()
 
 Methods:
 
@@ -39,54 +42,56 @@ Methods:
 <img src='IMAG1030.jpg' width = '200', height = '350'/>
 
 Views:
-1.  TextView: 'John's turn'<br /> 
-    -   Or 'Hans' turn' if it ends with a 's', 'z' or 'x'.<br /> 
-2.  TextView: display of the current word<br /> 
-3.  EditText: new letter.<br /> 
-    -   The length is forced to 1.<br /> 
-4.  Button: 'Go'. Calls makeMove(letter).<br /> 
+
+1.  TextView: 'John's turn'
+    1.  Or 'Hans' turn' if it ends with a 's', 'z' or 'x'.
+2.  TextView: display of the current word
+3.  EditText: new letter.
+    1.  The length is forced to 1.
+4.  Button: 'Go'. Calls makeMove(letter).
 
 Methods:
-1.  void onCreate(Bundle savedInstanceState)<br /> 
-    -   if the static lists of dictionaries (English and Dutch) are empty: setDictionaries().<br /> 
-2.  void setDictionaries()<br /> 
-    -   for each of the empty lists: <br /> 
-        -   make a scanner<br /> 
-        -   read in the words from a file<br /> 
-        -   save the words in the list of strings<br /> 
-3.  void makeMove(int letter). <br /> 
-    -   call checkValidLetter(letter)<br /> 
-    -   call addLetterToWord(letter)<br /> 
-    -   call checkForLost()<br /> 
-        -   if not lost:<br /> 
-            -   setNextPlayer()<br /> 
-            else:<br /> 
-            -   call editHighScores()<br /> 
-            -   create intent containing the winner's name and the boolean isWholeWord<br /> 
-            -   go to WinScreen with this intent<br /> 
-4.  Boolean checkValidLetter(int letter)<br /> 
-5.  void addLetterToWord()<br /> 
-6.  Boolean checkForLost()<br /> 
-    -   find the word in the dictionary that is the next word in alphabetical order<br /> 
-    -   if the current word is not a fragment of this word (beginning at the first letter), return true<br /> 
-    -   else if it is equal to the current word, return true<br /> 
-    -   else return false<br /> 
-7.  void setNextPlayer()<br /> 
-    -   change the name in the TextView<br /> 
-    -   change the colour<br /> 
+
+1.  void onCreate(Bundle savedInstanceState)
+    1. if the static lists of dictionaries (English and Dutch) are empty: setDictionaries(). 
+2.  void setDictionaries()
+    1.  for each of the empty lists: 
+        1.  make a scanner
+        2.  read in the words from a file
+        3.  save the words in the list of strings
+3.  void makeMove(int letter). 
+    1.  call checkValidLetter(letter)
+    2.  call addLetterToWord(letter)
+    3.  call checkForLost()<
+        1.  if not lost:
+            1.  setNextPlayer()
+        2.  else:
+            1.  call editHighScores()
+            2.  create intent containing the winner's name and the boolean isWholeWord
+            3.  go to WinScreen with this intent
+4.  Boolean checkValidLetter(int letter)
+5.  void addLetterToWord() 
+6.  Boolean checkForLost()
+    1.  find the word in the dictionary that is the next word in alphabetical order
+    2.  if the current word is not a fragment of this word (beginning at the first letter), return true
+    3.  else if it is equal to the current word, return true
+    4.  else return false
+7.  void setNextPlayer()
+    1.  change the name in the TextView
+    2.  change the colour
 
 #### Screen 4: WinScreen
 
 <img src='IMAG1033.jpg' width = '200', height = '350'/>
 
-Views:<br /> 
+Views:
 
-Methods:<br /> 
+Methods:
 
 #### Screen 5: HighscoresScreen
 
 <img src='IMAG1034.jpg' width = '200', height = '350'/>
 
-Views:<br /> 
+Views:
 
-Methods:<br /> 
+Methods:
