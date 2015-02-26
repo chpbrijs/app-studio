@@ -30,12 +30,13 @@ Views:
 Methods:
 
 1.  void startNewGameWithNames(). 
-    1.   Saves the names (if valid and not the same) in public strings list
-    2.   Calls startNewGame()
+    1.   Save the names (if valid and not the same) in public strings list
+    2.   Call startNewGame()
 2.  void startNewGame(). 
-    1.   Chooses random player
-    2.   Initializes word 
-    3.   Goes to MainActivity
+    1.   Choose random player
+    2.   Initialize word 
+    3.   Show the right name and colour
+    4.   Go to MainActivity
 
 #### Screen 3: MainActivity
 
@@ -50,7 +51,7 @@ Variables:
 4.  public final List<String> dictionary_en
 5.  public final List<String> dictionary_nl
 6.  public Hashtable name_score_pairs
-7.  public String[] player_ranking
+7.  public List<String> player_ranking
 
 Views:
 
@@ -91,7 +92,8 @@ Methods:
     1.  change the name in the TextView
     2.  change the colour
 8. void editHighScores()
-    1.  
+    1.  increment the score in name_score_pairs
+    2.  move the name in player_ranking forward if necessary
 
 #### Screen 4: WinScreen
 
@@ -102,13 +104,47 @@ Views:
 1.  TextView: display the winner's name
 2.  TextView: state the reason for winning
 3.  TextView: show the current place in the high score list
+4.  Button: 'view high score'. Calls toHighScoresScreen().
+5.  Button: 'new game'. Calls startNewGame()
 
 Methods:
 
-#### Screen 5: HighscoresScreen
+1.  void toHighScoresScreen()
+    1.  Use an intent to go to HighScoresScreen
+2.  void startNewGame(). 
+    1.   Choose random player
+    2.   Initialize word 
+    3.   Show the right name and colour
+    4.   Go to MainActivity
+
+#### Screen 5: HighScoresScreen
 
 <img src='IMAG1034.jpg' width = '200', height = '350'/>
 
+Variables:
+
+private String content
+
 Views:
 
+1.  TextView: 'High scores'
+2.  TextView: position, name, score
+    1.  only the five highest scores are shown
+    2.  if there are less than five available, the TextView remains empty
+3.  Button: 'new game'. Calls startNewGame().
+
 Methods:
+
+1. void fillHighScoreTextViews(). This function gets called when the activity receives the intent from WinScreen.
+    1.  make the string 'content' empty
+    2.  for the indices 0 to 4:
+        1.  find the name in player_ranking at this index
+        2.  find the score in name_score_pairs using this name
+        3.  make a string consisting of (index + 1), name and score
+        4.  add '\n' and this string to content
+    3.  set text in the corresponding TextView to content
+2.  void startNewGame(). 
+    1.   Choose random player
+    2.   Initialize word 
+    3.   Show the right name and colour
+    4.   Go to MainActivity 
