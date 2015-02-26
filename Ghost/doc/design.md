@@ -11,7 +11,7 @@ Views:
 2.  Button: 'Start'. Calls onStartButtonClick()
 
 Methods:
-1.  void onStartButtonClick(). 
+1.  void onStartButtonClick(). <br /> 
     - Goes to SetNamesScreen 
 
 #### Screen 2: SetNamesScreen
@@ -25,12 +25,12 @@ Views:
 4.  Button: 'Go'. Calls startNewGameWithNames()
 
 Methods:
-1.  void startNewGameWithNames(). 
-    -   Saves the names in public strings list
-    -   Calls startNewGame()
-2.  void startNewGame(). 
-    -   Chooses random player
-    -   Initializes word
+1.  void startNewGameWithNames(). <br /> 
+    -   Saves the names in public strings list<br /> 
+    -   Calls startNewGame()<br /> 
+2.  void startNewGame(). <br /> 
+    -   Chooses random player<br /> 
+    -   Initializes word<br /> 
     -   Goes to MainActivity
 
 #### Screen 3: MainActivity
