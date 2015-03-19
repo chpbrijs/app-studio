@@ -1,8 +1,102 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base application theme. Theme.AppCompat.Light.DarkActionBar-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
     </style>
+
+    <style name="relative_layout_total">
+        <item name="android:background">@drawable/background1</item>
+        <item name="android:padding">@dimen/layout_margin</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="text">
+        <item name="android:layout_width"> wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/all_text</item>
+        <item name="android:textSize"> 20sp </item>
+    </style>
+
+    <style name="text.large">
+        <item name="android:textSize"> 30sp </item>
+    </style>
+
+    <style name="text.middle">
+        <item name="android:textSize"> 25sp </item>
+    </style>
+
+    <style name="text.large.word_display">
+        <item name="android:textColor"> @color/word </item>
+        <item name="android:layout_marginTop"> 130dp </item>
+        <item name="android:layout_centerHorizontal"> true </item>
+    </style>
+
+    <style name="text.large.title">
+        <item name="android:layout_margin" > @dimen/title_margin </item>
+        <item name="android:layout_centerHorizontal"> true </item>
+        <item name="android:layout_alignParentTop"> true </item>
+    </style>
+
+    <style name="button">
+        <item name="android:layout_width"> wrap_content</item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_margin"> 15dp </item>
+        <item name="android:padding"> 5dp </item>
+        <item name="android:textColor"> @color/button_text </item>
+        <item name="android:background"> @color/button_background </item>
+        <item name="android:alpha"> 0.8 </item>
+    </style>
+
+    <style name="button.big">
+        <item name="android:layout_width"> 170dp </item>
+        <item name="android:layout_centerHorizontal"> true </item>
+        <item name="android:padding"> 15dp </item>
+        <item name="android:layout_margin"> 5dp </item>
+    </style>
+
+    <style name="button.big.large_text">
+        <item name="android:textSize"> 30sp </item>
+    </style>
+
+    <style name="button.big.large_text.title">
+        <item name="android:layout_margin" > @dimen/title_margin </item>
+    </style>
+
+    <style name="edit_text">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_margin"> 15dp </item>
+        <item name="android:textColor"> @color/all_text </item>
+    </style>
+
+    <style name="edit_text.input_letter">
+        <item name="android:digits"> @string/all_alpha </item>
+        <item name="android:maxLength"> 1 </item>
+        <item name="android:inputType"> textVisiblePassword </item>
+    </style>
+
+    <style name="edit_text.name_input">
+        <item name="android:layout_width"> 130dp </item>
+        <item name="android:digits"> @string/all_alpha_space </item>
+        <item name="android:maxLength"> 20 </item>
+    </style>
+
+    <style name="spinner">
+        <item name="android:layout_margin"> 15dp </item>
+        <item name="android:layout_height"> 50dp </item>
+        <item name="android:layout_width"> 130dp </item>
+        <item name="android:background"> @color/spinner_background </item>
+        <item name="android:alpha"> 0.8 </item>
+    </style>
+
+    <style name="text.radio_button" parent="AppTheme">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:layout_margin"> 10dp </item>
+        <item name="android:textSize"> 20sp </item>
+        <item name="android:textColor"> @color/all_text </item>
+    </style>
+
 
 </resources>

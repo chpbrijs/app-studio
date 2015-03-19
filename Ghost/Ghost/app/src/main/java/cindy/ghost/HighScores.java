@@ -1,7 +1,9 @@
 package cindy.ghost;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,13 +19,14 @@ public class HighScores implements Serializable{
     public List<String> ranking;
     public int numberOfPlayers;
     public int oldRankingPlace, newRankingPlace;
-    public String delimiter;
+    private String delimiter = "!";
+
+    private final int MAX_SHOWN = 15;
 
     public HighScores(){
         nameToScore = new HashMap<String, Integer>();
         ranking = new ArrayList<String>();
         numberOfPlayers = 0;
-        delimiter = "!";
 
         newRankingPlace = -1;
         oldRankingPlace = -1;
@@ -38,76 +41,71 @@ public class HighScores implements Serializable{
     }
 
     public void incrementScoreFor(String name){
-        if (nameToScore.containsKey(name)){
+        if (!nameToScore.containsKey(name)) return;
 
-            int score = nameToScore.get(name);
-            nameToScore.put(name, score + 1);
-            updateRankingFor(name);
-        }
-        else{
-            Log.e("HighScores", "could not increment score: name unknown");
-        }
+        int score = nameToScore.get(name);
+        nameToScore.put(name, score + 1);
+        updateRankingFor(name);
     }
 
     private void updateRankingFor(String name){
 
         int myRanking, myScore, otherScore, index;
+
         myRanking = ranking.indexOf(name);
 
         oldRankingPlace = myRanking;
         newRankingPlace = myRanking;
 
-        if (oldRankingPlace == 0) {
-            return;
-        }
-
         myScore = nameToScore.get(name);
 
         index = oldRankingPlace;
-        do {
-            index --;
+        while (index > 0){
+            index -- ;
             String otherName = ranking.get(index);
             otherScore = nameToScore.get(otherName);
+
             if (myScore > otherScore){
-                Log.i("", "increased in ranking!");
                 Collections.swap(ranking, index, myRanking);
                 myRanking = index;
-                newRankingPlace = myRanking;
+            }
+            else{
+                break;
             }
         }
-        while(myScore > otherScore && index > 0);
+
+        newRankingPlace = myRanking;
     }
 
     public Integer getScoreOf(String name){
         return nameToScore.get(name);
     }
 
-    public Boolean contains(String name){
-        return nameToScore.containsKey(name);
-    }
-
     public String makeString(Boolean setMaximum){
-        int n = numberOfPlayers;
-        if (n == 0) return "";
+
+        int N_string = numberOfPlayers;
+        if (N_string == 0) return "";
 
         if (setMaximum){
-            if (n > 10) n = 10;
+            if (N_string > MAX_SHOWN) N_string = MAX_SHOWN;
         }
 
         StringBuilder sb_names = new StringBuilder();
         StringBuilder sb_scores = new StringBuilder();
 
-        for (int i = 0; i < n; i++) {
-            sb_names.append(i + 1);
+        for (int i = 0; i < N_string; i++) {
+
+            int ranking_nr = i + 1;
+            sb_names.append(ranking_nr);
             String currentName = ranking.get(i);
 
-            if (i + 1 < 10) {
-                sb_names.append(".  ").append(currentName).append("\n");
-            }
-            else{
-                sb_names.append(". ").append(currentName).append("\n");
+            sb_names.append(". ");
+
+            if (ranking_nr < 10) {
+                sb_names.append(" ");
             }
 
+            sb_names.append(currentName).append("\n");
             sb_scores.append(getScoreOf(currentName)).append("\n");
         }
 
@@ -117,7 +115,12 @@ public class HighScores implements Serializable{
         return nameString.concat(delimiter).concat(nameScores);
     }
 
-    public void findHighScoresFromString(String names_scores){
+    private void findHighScoresFromString(String names_scores){
+
+        nameToScore.clear();
+        ranking.clear();
+        numberOfPlayers = 0;
+
         if (names_scores.equals("")) return;
 
         StringTokenizer stringTokenizer = new StringTokenizer(names_scores, delimiter);
@@ -127,22 +130,48 @@ public class HighScores implements Serializable{
         String[] list_names = nameString.split("\n");
         String[] list_scores = scoresString.split("\n");
 
-        int n = list_names.length;
-        if (n != list_scores.length){
+        int n_players = list_names.length;
+        if (n_players != list_scores.length){
             Log.e("Class HighScores", "lengths differ in strings for names and scores");
             return;
         }
 
-        nameToScore.clear();
-        ranking.clear();
-        numberOfPlayers = 0;
-
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n_players; i++){
             String name = list_names[i].substring(3).trim();
             int score = Integer.parseInt(list_scores[i]);
             nameToScore.put(name, score);
             ranking.add(name);
             numberOfPlayers++;
         }
+    }
+
+    public void saveGameState(SharedPreferences.Editor spEditor){
+
+        String highScoresString = makeString(false);
+        spEditor.putString("highScoresString", highScoresString);
+        spEditor.putInt("oldRankingPlace", oldRankingPlace);
+        spEditor.putInt("newRankingPlace", newRankingPlace);
+    }
+
+    public void recallGameState(SharedPreferences sharedPreferences){
+
+        oldRankingPlace = sharedPreferences.getInt("oldRankingPlace", oldRankingPlace);
+        newRankingPlace = sharedPreferences.getInt("newRankingPlace", newRankingPlace);
+
+        String highScoresString = sharedPreferences.getString("highScoresString","");
+        findHighScoresFromString(highScoresString);
+    }
+
+    public void display(TextView namesTextView, TextView scoresTextView){
+
+        String names_scores, names, scores;
+
+        names_scores = makeString(true);
+        StringTokenizer stringTokenizer = new StringTokenizer(names_scores, delimiter);
+        names = stringTokenizer.nextToken();
+        scores = stringTokenizer.nextToken();
+
+        namesTextView.setText(names);
+        scoresTextView.setText(scores);
     }
 }

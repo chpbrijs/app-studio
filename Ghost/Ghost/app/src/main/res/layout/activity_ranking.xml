@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    style="@style/relative_layout_total">
+
+    <TextView
+        android:text="High Scores"
+        android:id="@+id/highScoresTitle"
+        style="@style/text.large.title"/>
+
+    <TextView
+        android:text="1. Een \n2. Twee \n3. Drie \n4. Vier \n5. Vijf \n6.honf \n7.sjdk \n8. paard \n9.koe \n10.kanarie"
+        android:id="@+id/rankingNames"
+        android:layout_marginTop="@dimen/high_score_margin"
+        style="@style/text.middle"/>
+
+    <TextView
+        android:text="23 \n21 \n17 \n12 \n8"
+        android:id="@+id/rankingScores"
+        android:layout_alignTop="@+id/rankingNames"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        style="@style/text.middle"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="all_background">#FEFEF0</color>
+    <color name="all_text">#444444</color>
+
+    <color name="button_text">#ffffff</color>
+    <color name="button_background">#9999cc</color>
+
+    <color name="word">#ee3366</color>
+
+    <color name="spinner_background">#ccccff</color>
+</resources>

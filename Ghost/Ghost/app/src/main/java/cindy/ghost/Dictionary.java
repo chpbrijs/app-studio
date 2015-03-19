@@ -8,15 +8,28 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.StringTokenizer;
 
 public class Dictionary implements Serializable {
 
-    public Node firstNode;
+    public HashSet<String> all_words, all_fragments;
+    public final String language;
 
-    public Dictionary(Context ctx, String country_code){
+    public Dictionary(String country_code, Context ctx){
+
+        all_words = new HashSet<String>();
+        all_fragments = new HashSet<String>();
+        language = country_code;
+
+        makeDictionary(ctx);
+    }
+
+    public void makeDictionary(Context ctx){
 
         InputStream rawList;
-        switch(country_code){
+        switch(language){
             case "en":
                 rawList = ctx.getResources().openRawResource(R.raw.englishwords);
                 break;
@@ -27,33 +40,27 @@ public class Dictionary implements Serializable {
                 return;
         }
 
-        firstNode = new Node(' ');
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(rawList));
+
         String line;
 
         do {
             try {
                 line = reader.readLine();
-            }catch (IOException iox){
+            }catch (IOException iox) {
                 line = null;
             }
 
             if (line != null && isValidWord(line)){
                 addToDictionary(line.toLowerCase());
             }
+
         }while (line != null);
     }
 
     private Boolean isValidWord(String word){
 
         int length = word.length();
-        Boolean checksForContainingFragment = false;
-        Node current_node = firstNode;
-
-        if (length > 4){
-            checksForContainingFragment = true;
-        }
 
         Character myChar;
         word = word.toLowerCase();
@@ -64,60 +71,40 @@ public class Dictionary implements Serializable {
             if (myChar < 'a' || myChar > 'z'){
                 return false;
             }
-
-            if (checksForContainingFragment){
-                current_node = current_node.childAt(myChar);
-                if (current_node == null){
-                    checksForContainingFragment = false;
-                }
-                else{
-                    if (i > 3 && current_node.endOfWord){
-                        return false;
-                    }
-                }
-            }
         }
 
         return true;
     }
 
     private void addToDictionary(String word){
-        Node current_node = firstNode;
 
-        int length = word.length();
-        Character myChar;
+        int word_length = word.length();
 
-        for (int i = 0; i < length; i++){
+        for (int i = 1; i < word_length; i++){
 
-            myChar = word.charAt(i);
+            String fragment = word.substring(0, i);
 
-            if (!current_node.isChild(myChar)) {
-
-                current_node.add_child(myChar);
+            if (i > 3 && all_words.contains(fragment)){
+                return;
             }
 
-            current_node = current_node.childAt(myChar);
+            if (!all_fragments.contains(fragment)) {
+                all_fragments.add(fragment);
+            }
         }
 
-        current_node.endOfWord = true;
+        if (word_length > 3){
+            all_words.add(word);
+        }
     }
 
-    public Boolean wordNotPossible(Node current_node, Character new_letter){
+    public Boolean wordNotPossible(String fragment){
 
-        /* return true if the new letter is not a child node */
-        return (!current_node.isChild(new_letter));
+        return (!all_fragments.contains(fragment));
     }
 
-    public Boolean formsWord (Node current_node, Character new_letter){
-
-        /* return true if the child node (new_letter) is the end of the word */
-        Node nextNode = current_node.childAt(new_letter);
-        return nextNode.endOfWord;
+    public Boolean formsWord (String word){
+        return all_words.contains(word);
     }
 
-    public Boolean makesNextLetterImpossible(Node current_node, Character new_letter){
-
-        /* return true if this letter makes it impossible to become a word of >3 letters */
-        return (current_node.childAt(new_letter).endOfTrie);
-    }
 }

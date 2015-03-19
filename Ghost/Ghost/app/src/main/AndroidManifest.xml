@@ -18,15 +18,19 @@
         </activity>
 
         <activity
-            android:name=".WinScreen">
+            android:name=".WinActivity">
         </activity>
 
         <activity
-            android:name=".NameScreen">
+            android:name=".NameActivity">
         </activity>
 
         <activity
-            android:name=".RankingScreen">
+            android:name=".RankingActivity">
+        </activity>
+
+        <activity
+            android:name=".LanguageActivity">
         </activity>
 
     </application>
