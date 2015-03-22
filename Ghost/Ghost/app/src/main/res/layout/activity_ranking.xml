@@ -1,21 +1,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
+    tools:context=".RankingActivity"
     style="@style/relative_layout_total">
 
     <TextView
-        android:text="High Scores"
+        android:text="@string/ranking_title_textView"
         android:id="@+id/highScoresTitle"
         style="@style/text.large.title"/>
 
     <TextView
-        android:text="1. \n2. \n3. \n4. \n5. \n6. \n7. "
         android:id="@+id/rankingNumbers"
         android:layout_marginTop="@dimen/high_score_margin"
         style="@style/text.middle"/>
 
     <TextView
-        android:text="Een\nTwee\nDrie\nVier\nVijf\ndonf\nsjdk"
         android:id="@+id/rankingNames"
         style="@style/text.middle"
         android:layout_alignTop="@+id/rankingNumbers"
@@ -23,7 +21,6 @@
         android:layout_toEndOf="@+id/rankingNumbers" />
 
     <TextView
-        android:text="23 \n21 \n17 \n12 \n8"
         android:id="@+id/rankingScores"
         android:layout_alignTop="@+id/rankingNames"
         android:layout_alignParentRight="true"

@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
+    tools:context=".NameActivity"
     style="@style/relative_layout_total">
 
     <GridLayout
@@ -14,24 +14,23 @@
         android:layout_marginTop="40dp">
 
         <EditText
-            android:hint="Player 1"
+            android:hint="@string/name_player1_editTextHint"
             android:id="@+id/player1name"
             style="@style/edit_text.name_input"/>
 
         <EditText
-            android:layout_alignParentRight="true"
             android:id="@+id/player2name"
-            android:hint="Player 2"
+            android:hint="@string/name_player2_editTextHint"
             style="@style/edit_text.name_input"/>
 
         <Button
-            android:text="clear"
+            android:text="@string/name_clear_button"
             android:id="@+id/player1clearButton"
             android:onClick="clearEditText"
             style="@style/button"/>
 
         <Button
-            android:text="clear"
+            android:text="@string/name_clear_button"
             android:id="@+id/player2clearButton"
             android:onClick="clearEditText"
             style="@style/button"/>
@@ -42,7 +41,6 @@
         </Spinner>
 
         <Spinner
-            android:layout_alignParentRight="true"
             android:id="@+id/spinner2"
             style="@style/spinner">
         </Spinner>
@@ -50,7 +48,7 @@
     </GridLayout>
 
     <Button
-        android:text="Start"
+        android:text="@string/name_start_button"
         android:layout_below="@id/nameGrid"
         android:layout_centerHorizontal="true"
         style="@style/button.big"

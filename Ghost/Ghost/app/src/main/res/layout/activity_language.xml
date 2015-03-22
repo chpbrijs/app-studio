@@ -1,10 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
+    tools:context=".LanguageActivity"
     style="@style/relative_layout_total">
 
     <TextView
-        android:text="Change language"
+        android:text="@string/language_title_text"
         android:id="@+id/change_language_title"
         style="@style/text.large.title"/>
 
@@ -16,12 +16,12 @@
         android:id="@+id/radio_group">
 
         <RadioButton
-            android:text="Dutch"
+            android:text="@string/language_nl"
             android:id="@+id/radio_dutch"
             style="@style/text.radio_button"/>
 
         <RadioButton
-            android:text="English"
+            android:text="@string/language_en"
             android:id="@+id/radio_english"
             style="@style/text.radio_button"/>
 

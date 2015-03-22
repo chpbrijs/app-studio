@@ -2,10 +2,25 @@
 <resources>
 
     <string name="app_name">Ghost</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
     <string name="all_alpha">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <string name="all_alpha_space">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ </string>
+
+    <string name="main_enterLetter_editTextHint">Enter a letter!</string>
+
+    <string name="win_new_game_button">New Game</string>
+    <string name="win_change_names_button">Change names</string>
+    <string name="win_view_ranking_button">View ranking</string>
+
+    <string name="ranking_title_textView">High Scores</string>
+
+    <string name="name_player1_editTextHint">Player 1</string>
+    <string name="name_player2_editTextHint">Player 2</string>
+    <string name="name_clear_button">clear</string>
+    <string name="name_start_button">Start</string>
+
+    <string name="language_title_text">Change language</string>
+    <string name="language_en">English</string>
+    <string name="language_nl">Dutch</string>
+
 
 </resources>

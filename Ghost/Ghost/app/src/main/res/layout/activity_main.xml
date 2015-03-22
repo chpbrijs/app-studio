@@ -5,16 +5,14 @@
 
     <TextView
         android:id="@+id/current_player_name"
-        android:text="Cindy's turn"
         style="@style/text.large.title"/>
 
     <TextView
-        android:text="@string/hello_world"
         android:id="@+id/word_display"
         style="@style/text.large.word_display"/>
 
     <EditText
-        android:hint="Enter a letter!"
+        android:hint="@string/main_enterLetter_editTextHint"
         android:id="@+id/edit_text_new_letter"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

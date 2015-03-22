@@ -1,34 +1,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
+    tools:context=".WinActivity"
     style="@style/relative_layout_total">
 
     <TextView
         android:id="@+id/winnerNameTextView"
-        android:text="Cindy has won!"
         style="@style/text.large.title"/>
 
     <TextView
-        android:text="helloh cannot form a word!"
         android:id="@+id/wordResultTextView"
         style="@style/text.large.word_display"/>
 
     <TextView
-        android:text="You have moved to place 4!"
         android:id="@+id/newPlaceTextView"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/goToRankingButton"
         style="@style/text"/>
 
     <Button
-        android:text="View ranking"
-        android:id="@+id/goToRankingButton"
-        android:onClick="toRankingScreen"
-        android:layout_alignParentBottom="true"
-        style="@style/button.big"/>
-
-    <Button
-        android:text="New game"
+        android:text="@string/win_new_game_button"
         android:id="@+id/newGameButton"
         android:layout_centerVertical="true"
         android:onClick="newGameButtonClicked"
@@ -38,8 +28,15 @@
     <Button
         android:id="@+id/changeNamesFromWinScreen"
         android:layout_below="@+id/newGameButton"
-        android:text="Change names"
+        android:text="@string/win_change_names_button"
         android:onClick="changePlayerNames"
+        style="@style/button.big"/>
+
+    <Button
+        android:text="@string/win_view_ranking_button"
+        android:id="@+id/goToRankingButton"
+        android:onClick="toRankingScreen"
+        android:layout_alignParentBottom="true"
         style="@style/button.big"/>
 
 </RelativeLayout>

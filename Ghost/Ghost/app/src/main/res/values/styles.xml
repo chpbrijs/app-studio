@@ -4,12 +4,15 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
 
+    <!-- Base layout for each screen -->
     <style name="relative_layout_total">
         <item name="android:background">@drawable/background1</item>
         <item name="android:padding">@dimen/layout_margin</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
+    <!-- Styles for TextViews -->
 
     <style name="text">
         <item name="android:layout_width"> wrap_content</item>
@@ -38,6 +41,8 @@
         <item name="android:layout_alignParentTop"> true </item>
     </style>
 
+    <!-- Styles for Buttons -->
+
     <style name="button">
         <item name="android:layout_width"> wrap_content</item>
         <item name="android:layout_height"> wrap_content</item>
@@ -63,6 +68,8 @@
         <item name="android:layout_margin" > @dimen/title_margin </item>
     </style>
 
+    <!-- Styles for EditTexts -->
+
     <style name="edit_text">
         <item name="android:layout_width"> wrap_content </item>
         <item name="android:layout_height"> wrap_content</item>
@@ -81,12 +88,15 @@
         <item name="android:maxLength"> 14 </item>
     </style>
 
+    <!-- Styles for Spinners -->
+
     <style name="spinner">
         <item name="android:layout_margin"> 15dp </item>
         <item name="android:layout_height"> 50dp </item>
         <item name="android:layout_width"> 130dp </item>
-        <item name="android:checkMark"> @color/button_background </item>
     </style>
+
+    <!-- Styles for RadioButtons -->
 
     <style name="text.radio_button" parent="AppTheme">
         <item name="android:layout_width"> wrap_content </item>
