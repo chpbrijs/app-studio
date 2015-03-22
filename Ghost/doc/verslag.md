@@ -9,9 +9,9 @@ Dit is het hoofdscherm, waarin het spel wordt gespeeld. Hier is te zien wie er a
 In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart game", "Change players" en "Change language".
 
 <img src='Screenshots/MainActivity/MainActivity0.png' width = '216', height = '384'/>
-<img src='Screenshots/MainActivity/MainActivity1.png' width = '200', height = '350'/>
-<img src='Screenshots/MainActivity/MainActivity2.png' width = '200', height = '350'/>
-<img src='Screenshots/MainActivity/MainActivity3.png' width = '200', height = '350'/>
+<img src='Screenshots/MainActivity/MainActivity1.png' width = '216', height = '384'/>
+<img src='Screenshots/MainActivity/MainActivity2.png' width = '216', height = '384'/>
+<img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
 ### WinActivity
 
