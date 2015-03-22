@@ -8,7 +8,7 @@ Dit is het hoofdscherm, waarin het spel wordt gespeeld. Hier is te zien wie er a
 
 In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart game", "Change players" en "Change language".
 
-<img src='Screenshots/MainActivity/MainActivity0.png' width = '200', height = '350'/>
+<img src='Screenshots/MainActivity/MainActivity0.png' width = '720', height = '1280'/>
 <img src='Screenshots/MainActivity/MainActivity1.png' width = '200', height = '350'/>
 <img src='Screenshots/MainActivity/MainActivity2.png' width = '200', height = '350'/>
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '200', height = '350'/>
@@ -18,6 +18,9 @@ In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart g
 Als het spel is gewonnen, wordt er dit scherm getoond. Hier is de winnaar te zien, het woord en de reden waarom er gewonnen is. Onderaan staat de plaats in de High Scores lijst en eventueel de oude plaats als de speler in de ranking gestegen is. 
 
 Er zijn verschillende knoppen in dit scherm. De knop met "New Game" laat een nieuw spel starten met dezelfde spelers en gaat dus naar MainActivity. De knop eronder laat ook een nieuw spel starten, maar komt eerst in NameActivity. Ten slotte is onderaan de knop om naar RankingActivity te gaan om de ranking te zien.
+
+<img src='Screenshots/WinActivity/WinActivity0.png' width = '200', height = '350'/>
+<img src='Screenshots/WinActivity/WinActivity0.png' width = '200', height = '350'/>
 
 ### RankingActivity
 
