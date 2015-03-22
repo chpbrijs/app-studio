@@ -4,13 +4,16 @@
 
 ### MainActivity
 
-Dit is het hoofdscherm, waarin het spel wordt gespeeld. Hier is te zien wie er aan de beurt is en wat het woord tot nu toe is. In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op Enter gedrukt worden via het on-screen-toetsenbord.
-
-In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart game", "Change players" en "Change language".
+Dit is het hoofdscherm, waarin het spel wordt gespeeld. Hier is te zien wie er aan de beurt is en wat het woord tot nu toe is. 
 
 <img src='Screenshots/MainActivity/MainActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/MainActivity/MainActivity1.png' width = '216', height = '384'/>
+
+In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart game", "Change players" en "Change language".
 <img src='Screenshots/MainActivity/MainActivity2.png' width = '216', height = '384'/>
+
+In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op Enter gedrukt worden via het on-screen-toetsenbord. Als er daarna niet wordt gewonnen, is de andere speler aan de beurt en wordt het woord direct bijgewerkt.
+
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
 ### WinActivity
