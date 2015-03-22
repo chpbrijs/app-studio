@@ -17,6 +17,8 @@ In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op
 
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
+
+
 ### WinActivity
 
 Als het spel is gewonnen, wordt er dit scherm getoond. Hier is de winnaar te zien, het woord en de reden waarom er gewonnen is. Onderaan staat de plaats in de High Scores lijst en eventueel de oude plaats als de speler in de ranking gestegen is. 
@@ -36,14 +38,14 @@ Dit scherm toont de ranking van de 15 hoogst scorende spelers. Om terug te gaan 
 
 Hier kunnen de namen van de spelers worden gekozen. In de EditText bovenaan kunnen de namen worden getypt en beide EditTexts hebben een "clear"-knop eronder. 
 
-<img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/NameActivity/NameActivity1.png' width = '216', height = '384'/>
 
-Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt).
+Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt). Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
 
 <img src='Screenshots/NameActivity/NameActivity3.png' width = '216', height = '384'/>
+<img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
 
-Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
+Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. 
 
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
 
@@ -56,6 +58,8 @@ Tijdens een spel kan een speler ervoor kiezen om de taal te veranderen. Dan komt
 ## Classes
 
 ### Dictionary
+
+
 
 ### GamePlay
 
