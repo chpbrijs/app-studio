@@ -40,6 +40,7 @@ Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedr
 
 <img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/NameActivity/NameActivity1.png' width = '216', height = '384'/>
+<img src='Screenshots/NameActivity/NameActivity3.png' width = '216', height = '384'/>
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
 
 ### LanguageActivity
