@@ -8,6 +8,8 @@ Dit is het hoofdscherm, waarin het spel wordt gespeeld. Hier is te zien wie er a
 
 In dit scherm zijn er ook een aantal menu-opties toegevoegd, namelijk "Restart game", "Change players" en "Change language".
 
+<img src='Screenshots/MainActivity/MainActivity0.png' width = '200', height = '350'/>
+
 ### WinActivity
 
 Als het spel is gewonnen, wordt er dit scherm getoond. Hier is de winnaar te zien, het woord en de reden waarom er gewonnen is. Onderaan staat de plaats in de High Scores lijst en eventueel de oude plaats als de speler in de ranking gestegen is. 
