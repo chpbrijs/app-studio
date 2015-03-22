@@ -17,25 +17,47 @@ In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op
 
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
-####### protected void onCreate(Bundle savedInstanceState)
-blabajhsd
+###### protected void onCreate(Bundle savedInstanceState)
+Initialiseren van de widgets en de lijst van dictionaries. Het roept loadDictionaries en initiateGameState aan.
 
-####### public boolean onCreateOptionsMenu(Menu menu)
-aksjdnkajn asidio oaijd
+###### public boolean onCreateOptionsMenu(Menu menu)
+Creeeren van het menu.
 
-####### public boolean onOptionsItemSelected(MenuItem item) 
-####### public void loadDictionaries()
-####### public void changePlayerNames()
-####### protected void onActivityResult(int requestCode, int resultCode, Intent data)
-####### protected void onStart()
-####### public void enterLetter()
-####### public void display()
-####### public void toWinScreen()
-####### protected void onStop()
-####### public void onBackPressed()
-####### public void saveGameState()
-####### public void initiateGameState()
+###### public boolean onOptionsItemSelected(MenuItem item) 
+Het spel kan worden herstart, er kan een andere taal worden gekozen en er kunnen andere namen voor de spelers worden gekozen.
 
+###### public void loadDictionaries()
+Laden van de dictionaries voor Engels en Nederlands. Beide dictionaries worden in de lijst all_dictionaries geplaatst.
+
+###### public void changePlayerNames()
+Een intent wordt gemaakt om naar NameActivity te gaan met startActivityForResult, met de namen van de spelers en de highscores-gegevens. 
+
+###### protected void onActivityResult(int requestCode, int resultCode, Intent data)
+Afhandelen van de resultaten van intents die van NameActivity, WinActivity of LanguageActivity kwamen.
+
+###### protected void onStart()
+Als er nog geen namen zijn, dan wordt changeNames() aangeroepen. Anders ofwel display() of toWinActivity().
+
+###### public void enterLetter()
+Dit wordt aangeroepen als er op er op de Enter knop in het toetsenbord is gedrukt. Er wordt een stap gemaakt in de gamePlay met de ingevoerde letter.
+
+###### public void display()
+Toont de huidige spelsituatie.
+
+###### public void toWinActivity()
+Dit wordt aangeroepen als het spel afgelopen is. Er wordt een intent gemaakt om naar WinActivity te gaan met startActivityForResult, omdat het nodig is om te weten of er nog wordt gewisseld van spelers of niet.
+
+###### protected void onStop()
+Voordat de app wordt gestopt, wordt eerst saveGameState() aangeroepen om gegevens op te slaan.
+
+###### public void onBackPressed()
+Als er op 'terug' wordt gedrukt, gaat de app naar NameActivity, in plaats van dat de app afsluit. 
+
+###### public void saveGameState()
+Gegevens worden opgeslagen zoals de namen van de spelers, de taal en de gegevens van gamePlay en highScores die worden opgeslagen met gamePlay.saveGameState en highScores.saveGameState
+
+###### public void initiateGameState()
+Gegevens worden gevonden zoals de namen van de spelers, de taal en de gegevens van gamePlay en highScores die worden gevonden met gamePlay.recallGameState en highScores.recallGameState. 
 
 ### WinActivity
 
