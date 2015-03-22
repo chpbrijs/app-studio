@@ -34,18 +34,24 @@ Dit scherm toont de ranking van de 15 hoogst scorende spelers. Om terug te gaan 
 
 ### NameActivity
 
-Hier kunnen de namen van de spelers worden gekozen. In de EditText bovenaan kunnen de namen worden getypt en beide EditTexts hebben een "clear"-knop eronder. Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt).
-
-Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
+Hier kunnen de namen van de spelers worden gekozen. In de EditText bovenaan kunnen de namen worden getypt en beide EditTexts hebben een "clear"-knop eronder. 
 
 <img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/NameActivity/NameActivity1.png' width = '216', height = '384'/>
+
+Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt).
+
 <img src='Screenshots/NameActivity/NameActivity3.png' width = '216', height = '384'/>
+
+Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
+
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
 
 ### LanguageActivity
 
 Tijdens een spel kan een speler ervoor kiezen om de taal te veranderen. Dan komt de speler in dit scherm, waarbij er gekozen kan worden tussen talen door middel van RadioButtons in een RadioGroup. De mogelijke talen zijn Nederlands en Engels. Als een van de talen is aangevinkt, gaat de app terug naar MainActivity.
+
+<img src='Screenshots/LanguageActivity/LanguageActivity0.png' width = '216', height = '384'/>
 
 ## Classes
 
