@@ -17,6 +17,26 @@ In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op
 
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
+####### protected void onCreate(Bundle savedInstanceState)
+blabajhsd
+
+####### public boolean onCreateOptionsMenu(Menu menu)
+aksjdnkajn asidio oaijd
+
+####### public boolean onOptionsItemSelected(MenuItem item) 
+####### public void loadDictionaries()
+####### public void changePlayerNames()
+####### protected void onActivityResult(int requestCode, int resultCode, Intent data)
+####### protected void onStart()
+####### public void enterLetter()
+####### public void display()
+####### public void toWinScreen()
+####### protected void onStop()
+####### public void onBackPressed()
+####### public void saveGameState()
+####### public void initiateGameState()
+
+
 ### WinActivity
 
 Als het spel is gewonnen, wordt er dit scherm getoond. Hier is de winnaar te zien, het woord en de reden waarom er gewonnen is. Onderaan staat de plaats in de High Scores lijst en eventueel de oude plaats als de speler in de ranking gestegen is. 
@@ -34,21 +54,30 @@ Dit scherm toont de ranking van de 15 hoogst scorende spelers. Om terug te gaan 
 
 ### NameActivity
 
-Hier kunnen de namen van de spelers worden gekozen. In de EditText bovenaan kunnen de namen worden getypt en beide EditTexts hebben een "clear"-knop eronder. Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt).
+Hier kunnen de namen van de spelers worden gekozen. In de EditText bovenaan kunnen de namen worden getypt en beide EditTexts hebben een "clear"-knop eronder. 
 
-Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
-
-<img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/NameActivity/NameActivity1.png' width = '216', height = '384'/>
+
+Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van spelers die eerder een spel hebben gespeeld (en afgemaakt). Als er nog niet eerder namen gekozen zijn, dan worden de Spinners niet getoond.
+
+<img src='Screenshots/NameActivity/NameActivity3.png' width = '216', height = '384'/>
+<img src='Screenshots/NameActivity/NameActivity0.png' width = '216', height = '384'/>
+
+Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. 
+
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
 
 ### LanguageActivity
 
 Tijdens een spel kan een speler ervoor kiezen om de taal te veranderen. Dan komt de speler in dit scherm, waarbij er gekozen kan worden tussen talen door middel van RadioButtons in een RadioGroup. De mogelijke talen zijn Nederlands en Engels. Als een van de talen is aangevinkt, gaat de app terug naar MainActivity.
 
+<img src='Screenshots/LanguageActivity/LanguageActivity0.png' width = '216', height = '384'/>
+
 ## Classes
 
 ### Dictionary
+
+
 
 ### GamePlay
 
