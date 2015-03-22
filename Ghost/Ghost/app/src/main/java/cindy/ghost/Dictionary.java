@@ -62,13 +62,12 @@ public class Dictionary implements Serializable {
 
         int length = word.length();
 
-        Character myChar;
-        word = word.toLowerCase();
+        Character current_char;
 
         for (int i = 0; i < length; i++){
-            myChar = word.charAt(i);
+            current_char = word.charAt(i);
 
-            if (myChar < 'a' || myChar > 'z'){
+            if (current_char < 'a' || current_char > 'z'){
                 return false;
             }
         }
@@ -80,7 +79,7 @@ public class Dictionary implements Serializable {
 
         int word_length = word.length();
 
-        for (int i = 1; i < word_length; i++){
+        for (int i = 1; i < word_length - 1; i++){
 
             String fragment = word.substring(0, i);
 

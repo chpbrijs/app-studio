@@ -9,10 +9,18 @@
         style="@style/text.large.title"/>
 
     <TextView
-        android:text="1. Een \n2. Twee \n3. Drie \n4. Vier \n5. Vijf \n6.honf \n7.sjdk \n8. paard \n9.koe \n10.kanarie"
-        android:id="@+id/rankingNames"
+        android:text="1. \n2. \n3. \n4. \n5. \n6. \n7. "
+        android:id="@+id/rankingNumbers"
         android:layout_marginTop="@dimen/high_score_margin"
         style="@style/text.middle"/>
+
+    <TextView
+        android:text="Een\nTwee\nDrie\nVier\nVijf\ndonf\nsjdk"
+        android:id="@+id/rankingNames"
+        style="@style/text.middle"
+        android:layout_alignTop="@+id/rankingNumbers"
+        android:layout_toRightOf="@+id/rankingNumbers"
+        android:layout_toEndOf="@+id/rankingNumbers" />
 
     <TextView
         android:text="23 \n21 \n17 \n12 \n8"

@@ -9,7 +9,7 @@
         style="@style/text.large.title"/>
 
     <TextView
-        android:text="hello cannot form a word!"
+        android:text="helloh cannot form a word!"
         android:id="@+id/wordResultTextView"
         style="@style/text.large.word_display"/>
 

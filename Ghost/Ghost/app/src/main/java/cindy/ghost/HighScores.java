@@ -19,9 +19,9 @@ public class HighScores implements Serializable{
     public List<String> ranking;
     public int numberOfPlayers;
     public int oldRankingPlace, newRankingPlace;
-    private String delimiter = "!";
+    final public String delimiter = "!";
 
-    private final int MAX_SHOWN = 15;
+    public final int MAX_SHOWN = 15;
 
     public HighScores(){
         nameToScore = new HashMap<String, Integer>();
@@ -83,9 +83,9 @@ public class HighScores implements Serializable{
 
     public String makeString(Boolean setMaximum){
 
-        int N_string = numberOfPlayers;
-        if (N_string == 0) return "";
+        if (numberOfPlayers == 0) return "";
 
+        int N_string = numberOfPlayers;
         if (setMaximum){
             if (N_string > MAX_SHOWN) N_string = MAX_SHOWN;
         }
@@ -95,24 +95,16 @@ public class HighScores implements Serializable{
 
         for (int i = 0; i < N_string; i++) {
 
-            int ranking_nr = i + 1;
-            sb_names.append(ranking_nr);
             String currentName = ranking.get(i);
-
-            sb_names.append(". ");
-
-            if (ranking_nr < 10) {
-                sb_names.append(" ");
-            }
 
             sb_names.append(currentName).append("\n");
             sb_scores.append(getScoreOf(currentName)).append("\n");
         }
 
         String nameString = sb_names.toString().trim();
-        String nameScores = sb_scores.toString().trim();
+        String scoreString = sb_scores.toString().trim();
 
-        return nameString.concat(delimiter).concat(nameScores);
+        return nameString.concat(delimiter).concat(scoreString);
     }
 
     private void findHighScoresFromString(String names_scores){
@@ -132,12 +124,11 @@ public class HighScores implements Serializable{
 
         int n_players = list_names.length;
         if (n_players != list_scores.length){
-            Log.e("Class HighScores", "lengths differ in strings for names and scores");
             return;
         }
 
         for (int i = 0; i < n_players; i++){
-            String name = list_names[i].substring(3).trim();
+            String name = list_names[i].trim();
             int score = Integer.parseInt(list_scores[i]);
             nameToScore.put(name, score);
             ranking.add(name);
@@ -160,18 +151,5 @@ public class HighScores implements Serializable{
 
         String highScoresString = sharedPreferences.getString("highScoresString","");
         findHighScoresFromString(highScoresString);
-    }
-
-    public void display(TextView namesTextView, TextView scoresTextView){
-
-        String names_scores, names, scores;
-
-        names_scores = makeString(true);
-        StringTokenizer stringTokenizer = new StringTokenizer(names_scores, delimiter);
-        names = stringTokenizer.nextToken();
-        scores = stringTokenizer.nextToken();
-
-        namesTextView.setText(names);
-        scoresTextView.setText(scores);
     }
 }

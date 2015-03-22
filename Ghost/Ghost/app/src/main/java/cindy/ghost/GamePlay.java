@@ -45,8 +45,6 @@ public class GamePlay implements Serializable{
 
     public void makeMove(Character letter){
 
-        Log.i("Class GamePlay","In makeMove");
-
         word_fragment = word_fragment.concat(letter.toString());
         checkForLost();
 
@@ -59,8 +57,6 @@ public class GamePlay implements Serializable{
     }
 
     private void checkForLost(){
-
-        Log.i("Class GamePlay", "In checkForLost");
 
         int length_new_word = word_fragment.length();
         game = false;

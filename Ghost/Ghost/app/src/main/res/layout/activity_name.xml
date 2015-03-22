@@ -11,7 +11,7 @@
         android:columnCount="2"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_marginTop="40dp">
 
         <EditText
             android:hint="Player 1"
@@ -26,13 +26,13 @@
 
         <Button
             android:text="clear"
-            android:id="@+id/player1nameButton"
+            android:id="@+id/player1clearButton"
             android:onClick="clearEditText"
             style="@style/button"/>
 
         <Button
             android:text="clear"
-            android:id="@+id/player2nameButton"
+            android:id="@+id/player2clearButton"
             android:onClick="clearEditText"
             style="@style/button"/>
 
@@ -51,10 +51,10 @@
 
     <Button
         android:text="Start"
-        android:onClick="startButtonClicked"
-        android:id="@+id/button"
+        android:layout_below="@id/nameGrid"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        style="@style/button.big.large_text.title"/>
+        style="@style/button.big"
+        android:onClick="startButtonClicked"/>
+
 
 </RelativeLayout>

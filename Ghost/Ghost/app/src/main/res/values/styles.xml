@@ -78,16 +78,14 @@
 
     <style name="edit_text.name_input">
         <item name="android:layout_width"> 130dp </item>
-        <item name="android:digits"> @string/all_alpha_space </item>
-        <item name="android:maxLength"> 20 </item>
+        <item name="android:maxLength"> 14 </item>
     </style>
 
     <style name="spinner">
         <item name="android:layout_margin"> 15dp </item>
         <item name="android:layout_height"> 50dp </item>
         <item name="android:layout_width"> 130dp </item>
-        <item name="android:background"> @color/spinner_background </item>
-        <item name="android:alpha"> 0.8 </item>
+        <item name="android:checkMark"> @color/button_background </item>
     </style>
 
     <style name="text.radio_button" parent="AppTheme">

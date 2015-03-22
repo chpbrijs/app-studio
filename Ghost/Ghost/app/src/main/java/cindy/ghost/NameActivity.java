@@ -22,9 +22,8 @@ public class NameActivity extends Activity {
 
     EditText player1EditText, player2EditText;
     Spinner spinner1, spinner2;
-    Button player1nameButton, player2nameButton;
+    Button player1clearButton, player2clearButton;
     String player1name, player2name;
-    ArrayAdapter<String> adapter1, adapter2;
     HighScores highScores;
     int comesFromOnCreate;
     List<String> allNames;
@@ -39,8 +38,9 @@ public class NameActivity extends Activity {
 
         player1EditText = (EditText) findViewById(R.id.player1name);
         player2EditText = (EditText) findViewById(R.id.player2name);
-        player1nameButton = (Button) findViewById(R.id.player1nameButton);
-        player2nameButton = (Button) findViewById(R.id.player2nameButton);
+
+        player1clearButton = (Button) findViewById(R.id.player1clearButton);
+        player2clearButton = (Button) findViewById(R.id.player2clearButton);
 
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         spinner2 = (Spinner) findViewById(R.id.spinner2);
@@ -49,37 +49,31 @@ public class NameActivity extends Activity {
         spinner2.setVisibility(View.INVISIBLE);
 
         Intent playerNamesIntent = getIntent();
-        int numberOfPlayers;
+        int numberOfPlayers = 0;
 
         try {
             highScores = (HighScores) playerNamesIntent.getSerializableExtra("highScores");
             allNames = highScores.ranking;
             Collections.sort(allNames);
             numberOfPlayers = highScores.numberOfPlayers;
-            Log.i("NameScreen", "highScore received in intent");
 
         } catch (NullPointerException npExc){
             allNames = new ArrayList<String>();
-            Log.i("NameScreen", "No highScore received in intent");
-            numberOfPlayers = 0;
         }
 
         try {
             player1name = playerNamesIntent.getStringExtra("player1name");
             player2name = playerNamesIntent.getStringExtra("player2name");
-            Log.i("NameScreen","In onCreate: found player names from intent: " + player1name +
-            " and " + player2name);
 
         } catch (NullPointerException npExc){
             player1name = "";
             player2name = "";
-            Log.i("NameScreen", "No names received in intent");
         }
 
         setupEditText(player1EditText, player1name);
         setupEditText(player2EditText, player2name);
 
-        if (numberOfPlayers > 2){
+        if (numberOfPlayers > 0){
             comesFromOnCreate = 2;
             setupSpinner(spinner1, player1EditText);
             setupSpinner(spinner2, player2EditText);
@@ -104,7 +98,6 @@ public class NameActivity extends Activity {
 
     private void setupSpinner(final Spinner spinner, final EditText nameEditText){
 
-        Log.i("","Setting up spinner");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, allNames);
 
@@ -143,16 +136,12 @@ public class NameActivity extends Activity {
         }
     }
 
-    public void startButtonClicked(View view){startGame();}
-
     private void startGame(){
         player1name = player1EditText.getText().toString().toLowerCase();
         player2name = player2EditText.getText().toString().toLowerCase();
 
         if (isValidName(player1name) && isValidName(player2name) &&
                 !player1name.equals(player2name) ) {
-
-            Log.i("NameScreen", "Names are valid");
 
             Intent namesIntent = new Intent();
 
@@ -161,7 +150,6 @@ public class NameActivity extends Activity {
 
             setResult(RESULT_OK, namesIntent);
 
-            Log.i("NameScreen", "Going back to main");
             finish();
         }
     }
@@ -173,10 +161,12 @@ public class NameActivity extends Activity {
         if (n == 0) return false;
 
         for (int i = 0; i < n ; i++){
+
             Character letter = name.charAt(i);
-            if ((letter < 'a' || letter > 'z') && letter != ' '){
+            if (!Character.isLetter(letter) && letter != ' '){
                 return false;
             }
+
         }
 
         return true;
@@ -197,11 +187,15 @@ public class NameActivity extends Activity {
     }
 
     public void clearEditText(View view){
-        if (view == player1nameButton){
+        if (view == player1clearButton){
             player1EditText.setText("");
         }
-        else if (view == player2nameButton){
+        else if (view == player2clearButton){
             player2EditText.setText("");
         }
+    }
+
+    public void startButtonClicked(View view){
+        startGame();
     }
 }

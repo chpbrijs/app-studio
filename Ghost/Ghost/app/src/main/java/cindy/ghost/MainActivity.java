@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
         all_dictionaries = new HashMap<String, Dictionary>();
 
         loadDictionaries();
-        recallGameState();
+        initiateGameState();
 
         newLetterEditText = (EditText) findViewById(R.id.edit_text_new_letter);
         nameView = (TextView) findViewById(R.id.current_player_name);
@@ -90,6 +90,7 @@ public class MainActivity extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_restart_game) {
             gamePlay.reset();
+            display();
             return true;
         }
         else if(id == R.id.menu_change_language){
@@ -113,16 +114,7 @@ public class MainActivity extends ActionBarActivity {
         for (String language : all_languages) {
 
             Log.i("","Loading dictionary for: " + language);
-
-            long t0, t1, delta_t;
-            t0 = System.currentTimeMillis();
-
             Dictionary myDictionary = new Dictionary(language, ctx);
-
-            t1 = System.currentTimeMillis();
-            delta_t = t1 - t0;
-
-            Log.i("", "Loaded dictionary in " + delta_t + " milliseconds for: " + language);
 
             all_dictionaries.put(language, myDictionary);
         }
@@ -153,6 +145,7 @@ public class MainActivity extends ActionBarActivity {
                 player1name = data.getStringExtra("player1name");
                 player2name = data.getStringExtra("player2name");
                 gamePlay.reset();
+                display();
 
                 Log.i("MainActivity", "Found player names");
                 break;
@@ -161,6 +154,7 @@ public class MainActivity extends ActionBarActivity {
                 Log.i("","intent came from WinScreen");
                 Boolean newNames = data.getBooleanExtra("newNames", false);
                 gamePlay.reset();
+                display();
                 if (newNames) changePlayerNames();
                 break;
 
@@ -235,13 +229,7 @@ public class MainActivity extends ActionBarActivity {
 
         newLetterEditText.setText("");
         wordView.setText(gamePlay.word_fragment);
-        newLetterEditText.setHint("Enter a letter");
         newLetterEditText.setText("");
-
-        if (player1name.equals("")){
-            nameView.setText("");
-            return;
-        }
 
         String currentPlayer;
         if (gamePlay.player1turn){
@@ -266,8 +254,6 @@ public class MainActivity extends ActionBarActivity {
             return;
         }
 
-        gamePlay.swapBeginPlayer();
-
         highScores.addPlayer(player1name);
         highScores.addPlayer(player2name);
 
@@ -280,6 +266,7 @@ public class MainActivity extends ActionBarActivity {
 
         if (!comesFromOnCreate) {
             highScores.incrementScoreFor(winnerName);
+            gamePlay.swapBeginPlayer();
             Log.i("MainActivity","Incremented high score for winner");
         }
 
@@ -305,6 +292,11 @@ public class MainActivity extends ActionBarActivity {
         super.onStop();
     }
 
+    @Override
+    public void onBackPressed(){
+        changePlayerNames();
+    }
+
     public void saveGameState(){
 
         SharedPreferences.Editor spEditor = getPreferences(Context.MODE_PRIVATE).edit();
@@ -321,14 +313,7 @@ public class MainActivity extends ActionBarActivity {
         Log.i("MainActivity", "Saved preferences");
     }
 
-    @Override
-    protected void onPause() {
-
-        Log.i("MainActivity","In onPause");
-        super.onPause();
-    }
-
-    public void recallGameState(){
+    public void initiateGameState(){
 
         Log.i("MainActivity","In recallGameState");
 
@@ -337,21 +322,13 @@ public class MainActivity extends ActionBarActivity {
         player1name = sharedPreferences.getString("player1name", "");
         player2name = sharedPreferences.getString("player2name", "");
 
-        current_language = sharedPreferences.getString("language", default_language);
+        current_language = sharedPreferences.getString("current_language", default_language);
         dictionary = all_dictionaries.get(current_language);
-
-        if (!player1name.isEmpty() && player2name.isEmpty()) {
-            Log.i("", "Found player names:" + player1name + " and " + player2name);
-        }
 
         highScores = new HighScores();
         highScores.recallGameState(sharedPreferences);
 
-        Log.i("","HighScores set");
-
         gamePlay = new GamePlay(dictionary);
         gamePlay.recallGameState(sharedPreferences);
-
-        Log.i("","GameState set");
     }
 }

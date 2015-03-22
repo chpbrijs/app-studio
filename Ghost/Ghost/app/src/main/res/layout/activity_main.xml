@@ -14,7 +14,7 @@
         style="@style/text.large.word_display"/>
 
     <EditText
-        android:hint="Place a letter here!"
+        android:hint="Enter a letter!"
         android:id="@+id/edit_text_new_letter"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"

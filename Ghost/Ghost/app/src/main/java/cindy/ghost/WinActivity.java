@@ -71,8 +71,6 @@ public class WinActivity extends Activity {
     }
 
     public void newGameButtonClicked(View view) {
-        Log.i("WinScreen", "In toMainActivity");
-        newNames = false;
         backToMain();
     }
 
@@ -86,6 +84,11 @@ public class WinActivity extends Activity {
 
     public void changePlayerNames(View view){
         newNames = true;
+        backToMain();
+    }
+
+    @Override
+    public void onBackPressed(){
         backToMain();
     }
 }
