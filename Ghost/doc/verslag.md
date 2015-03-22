@@ -1,6 +1,6 @@
 # Verslag
 
-#### Activities
+## Activities
 
 ### MainActivity
 
@@ -12,7 +12,7 @@
 
 ### LanguageActivity
 
-#### Classes
+## Classes
 
 ### Dictionary
 
