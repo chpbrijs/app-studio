@@ -17,6 +17,24 @@ In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op
 
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
+* protected void onCreate(Bundle savedInstanceState)
+blabajhsd
+
+* public boolean onCreateOptionsMenu(Menu menu)
+aksjdnkajn asidio oaijd
+
+* public boolean onOptionsItemSelected(MenuItem item) 
+* public void loadDictionaries()
+* public void changePlayerNames()
+* protected void onActivityResult(int requestCode, int resultCode, Intent data)
+* protected void onStart()
+* public void enterLetter()
+* public void display()
+* public void toWinScreen()
+* protected void onStop()
+* public void onBackPressed()
+* public void saveGameState()
+* public void initiateGameState()
 
 
 ### WinActivity
