@@ -159,7 +159,23 @@ Maken van een intent met de nieuw gekozen taal en ga terug naar MainActivity.
 
 ### Dictionary
 
+##### public Dictionary(String country_code, Context ctx)
+Voor de dictionary worden twee HashSet lijsten aangemaakt, namelijk met woorden en met fragmenten: all_words en all_fragments.
 
+##### public void makeDictionary(Context ctx)
+Bewerken van all_words en all_fragments door de raw-file in te lezen die bij de landcode hoort. Een woord wordt gecontroleerd met isValidWord() en dan eventueel toegevoegd aan de lijsten met addToDictionary().
+
+##### private Boolean isValidWord(String word)
+Check of een woord geen streepjes, comma's en dergelijke bevat.
+
+##### private void addToDictionary(String word)
+Toevoegen van een het woord een de lijst met woorden (als geen van de fragmenten al in all_words staat) en de fragmenten ervan toevoegen aan all_fragments.
+
+##### public Boolean wordNotPossible(String fragment)
+Check of het fragment in all_fragments staat, want als het niet zo is, kan er geen woord van gemaakt worden.
+
+##### public Boolean formsWord (String word)
+Check of het woord in all_words staat.
 
 ### GamePlay
 
