@@ -17,46 +17,46 @@ In de EditText kan een letter geplaatst worden en om een zet te doen, moet er op
 
 <img src='Screenshots/MainActivity/MainActivity3.png' width = '216', height = '384'/>
 
-###### protected void onCreate(Bundle savedInstanceState)
+##### protected void onCreate(Bundle savedInstanceState)
 Initialiseren van de widgets en de lijst van dictionaries. Het roept loadDictionaries en initiateGameState aan.
 
-###### public boolean onCreateOptionsMenu(Menu menu)
+##### public boolean onCreateOptionsMenu(Menu menu)
 Creeeren van het menu.
 
-###### public boolean onOptionsItemSelected(MenuItem item) 
+##### public boolean onOptionsItemSelected(MenuItem item) 
 Het spel kan worden herstart, er kan een andere taal worden gekozen en er kunnen andere namen voor de spelers worden gekozen.
 
-###### public void loadDictionaries()
+##### public void loadDictionaries()
 Laden van de dictionaries voor Engels en Nederlands. Beide dictionaries worden in de lijst all_dictionaries geplaatst.
 
-###### public void changePlayerNames()
+##### public void changePlayerNames()
 Een intent wordt gemaakt om naar NameActivity te gaan met startActivityForResult, met de namen van de spelers en de highscores-gegevens. 
 
-###### protected void onActivityResult(int requestCode, int resultCode, Intent data)
+##### protected void onActivityResult(int requestCode, int resultCode, Intent data)
 Afhandelen van de resultaten van intents die van NameActivity, WinActivity of LanguageActivity kwamen.
 
-###### protected void onStart()
+##### protected void onStart()
 Als er nog geen namen zijn, dan wordt changeNames() aangeroepen. Anders ofwel display() of toWinActivity().
 
-###### public void enterLetter()
+##### public void enterLetter()
 Dit wordt aangeroepen als er op er op de Enter knop in het toetsenbord is gedrukt. Er wordt een stap gemaakt in de gamePlay met de ingevoerde letter.
 
-###### public void display()
+##### public void display()
 Toont de huidige spelsituatie.
 
-###### public void toWinActivity()
+##### public void toWinActivity()
 Dit wordt aangeroepen als het spel afgelopen is. Er wordt een intent gemaakt om naar WinActivity te gaan met startActivityForResult, omdat het nodig is om te weten of er nog wordt gewisseld van spelers of niet.
 
-###### protected void onStop()
+##### protected void onStop()
 Voordat de app wordt gestopt, wordt eerst saveGameState() aangeroepen om gegevens op te slaan.
 
-###### public void onBackPressed()
+##### public void onBackPressed()
 Als er op 'terug' wordt gedrukt, gaat de app naar NameActivity, in plaats van dat de app afsluit. 
 
-###### public void saveGameState()
+##### public void saveGameState()
 Gegevens worden opgeslagen zoals de namen van de spelers, de taal en de gegevens van gamePlay en highScores die worden opgeslagen met gamePlay.saveGameState en highScores.saveGameState
 
-###### public void initiateGameState()
+##### public void initiateGameState()
 Gegevens worden gevonden zoals de namen van de spelers, de taal en de gegevens van gamePlay en highScores die worden gevonden met gamePlay.recallGameState en highScores.recallGameState. 
 
 ### WinActivity
@@ -68,11 +68,38 @@ Er zijn verschillende knoppen in dit scherm. De knop met "New Game" laat een nie
 <img src='Screenshots/WinActivity/WinActivity0.png' width = '216', height = '384'/>
 <img src='Screenshots/WinActivity/WinActivity1.png' width = '216', height = '384'/>
 
+##### protected void onCreate(Bundle savedInstanceState)
+Initialiseren met onder andere Boolean 'newNames' als false. Naar MainActivity wordt deze Boolean meegegeven om aan de gegeven of in MainActivity de functie changeNames() moet worden aangeroepen.
+
+##### public void display()
+Tonen van de winnaar et cetera.
+
+##### public void backToMain()
+Intent om terug te gaan naar MainActivity met newNames = false;
+
+##### public void newGameButtonClicked(View view)
+Naar backToMain.
+
+##### public void toRankingActivity(View view)
+Intent om naar RankingActivity te gaan.
+
+##### public void changePlayerNames(View view)
+Intent om terug te gaan naar MainActivity met newNames = true;
+
+##### public void onBackPressed()
+Naar backToMain.
+
 ### RankingActivity
 
 Dit scherm toont de ranking van de 15 hoogst scorende spelers. Om terug te gaan naar WinActivity moet er op de terugknop gedrukt worden.
 
 <img src='Screenshots/RankingActivity/RankingActivity0.png' width = '216', height = '384'/>
+
+##### protected void onCreate(Bundle savedInstanceState)
+Initialiseren van de widgets en aanroepen van display().
+
+##### public void display()
+Tonen van de gegevens door gebruik te maken van de functie highScores.makeString() die de highscores gegevens in een string zet.
 
 ### NameActivity
 
@@ -88,6 +115,8 @@ Er kan ook gebruik worden gemaakt van de Spinners die alle namen bevatten van sp
 Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedrukt of op de Enter-toets in het on-screen-toetsenbord. 
 
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
+
+
 
 ### LanguageActivity
 
