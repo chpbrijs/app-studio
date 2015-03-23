@@ -4,6 +4,8 @@
     <string name="app_name">Ghost</string>
 
     <string name="all_alpha">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="reasonForWinning_word"> is a word!</string>
+    <string name="reasonForWinning_not_word"> cannot form a word!</string>
 
     <string name="main_enterLetter_editTextHint">Enter a letter!</string>
 

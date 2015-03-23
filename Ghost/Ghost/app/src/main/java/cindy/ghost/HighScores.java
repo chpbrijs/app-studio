@@ -1,9 +1,6 @@
 package cindy.ghost;
 
 import android.content.SharedPreferences;
-import android.util.Log;
-import android.widget.MultiAutoCompleteTextView;
-import android.widget.TextView;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,8 +41,6 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.i("MainActivity", "In onCreate");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -71,6 +68,9 @@ public class MainActivity extends ActionBarActivity {
         });
 
         comesFromOnCreate = true;
+        if (player1name.isEmpty() || player2name.isEmpty()){
+            changePlayerNames();
+        }
     }
 
     @Override
@@ -113,7 +113,6 @@ public class MainActivity extends ActionBarActivity {
 
         for (String language : all_languages) {
 
-            Log.i("","Loading dictionary for: " + language);
             Dictionary myDictionary = new Dictionary(language, ctx);
 
             all_dictionaries.put(language, myDictionary);
@@ -121,7 +120,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void changePlayerNames(){
-        Log.i("MainActivity", "In changePlayerNames");
         Intent getNamesIntent = new Intent(this, NameActivity.class);
 
         getNamesIntent.putExtra("player1name", player1name);
@@ -134,24 +132,20 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        Log.i("MainActivity", "In onActivityResult, code: " + requestCode);
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode != RESULT_OK) return;
 
         switch (requestCode){
             case GET_NAMES_MAIN:
-                Log.i("","intent came from NameActivity");
                 player1name = data.getStringExtra("player1name");
                 player2name = data.getStringExtra("player2name");
                 gamePlay.reset();
                 display();
 
-                Log.i("MainActivity", "Found player names");
                 break;
 
             case GET_NAMES_WIN_SCREEN:
-                Log.i("","intent came from WinScreen");
                 Boolean newNames = data.getBooleanExtra("newNames", false);
                 gamePlay.reset();
                 display();
@@ -159,11 +153,9 @@ public class MainActivity extends ActionBarActivity {
                 break;
 
             case GET_LANGUAGE:
-                Log.i("","intent came from DictionariesActivity");
 
                 String result_language = data.getStringExtra("result_language");
                 if (current_language.equals(result_language)) {
-                    Log.i("","Did not change language");
                     break;
                 }
 
@@ -171,7 +163,6 @@ public class MainActivity extends ActionBarActivity {
                 dictionary = all_dictionaries.get(current_language);
                 gamePlay.changeDictionary(dictionary);
 
-                Log.i("","Changed language to: " + current_language);
                 break;
 
             default:
@@ -182,19 +173,17 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onStart() {
 
-        Log.i("MainActivity", "In onStart");
         super.onStart();
 
         if (player1name.equals("") || player2name.equals("")){
-            Log.i("MainActivity","In onStart, but there are no names yet");
             changePlayerNames();
         }
 
-        if(!gamePlay.game){
-            toWinScreen();
-        }
-        else{
+        if (gamePlay.game) {
             display();
+        }
+        else {
+            toWinActivity();
         }
 
         comesFromOnCreate = false;
@@ -202,7 +191,7 @@ public class MainActivity extends ActionBarActivity {
 
     public void enterLetter(){
 
-        if (!gamePlay.game) return;
+        if (!gamePlay.game || player1name.equals("") || player2name.equals("")) return;
 
         String something_entered = newLetterEditText.getText().toString().toLowerCase();
         if (something_entered.length() == 0) {
@@ -211,21 +200,10 @@ public class MainActivity extends ActionBarActivity {
 
         Character letter = something_entered.charAt(0);
 
-        if (player1name.equals("") || player2name.equals("")) return;
-
         gamePlay.makeMove(letter);
-
-        if (gamePlay.game) {
-            display();
-        }
-        else {
-            toWinScreen();
-        }
     }
 
     public void display(){
-
-        Log.i("MainActivity", "In display()");
 
         newLetterEditText.setText("");
         wordView.setText(gamePlay.word_fragment);
@@ -247,8 +225,7 @@ public class MainActivity extends ActionBarActivity {
         nameView.setText(currentPlayer.concat("' turn"));
     }
 
-    public void toWinScreen(){
-        Log.i("MainActivity","In toWinScreen");
+    public void toWinActivity(){
 
         if (player1name.isEmpty() || player2name.isEmpty() || gamePlay.word_fragment.isEmpty()){
             return;
@@ -267,14 +244,15 @@ public class MainActivity extends ActionBarActivity {
         if (!comesFromOnCreate) {
             highScores.incrementScoreFor(winnerName);
             gamePlay.swapBeginPlayer();
-            Log.i("MainActivity","Incremented high score for winner");
         }
 
         if (gamePlay.wonByMakingWord){
-            reasonForWinning = gamePlay.word_fragment.concat(" is a word!");
+            reasonForWinning = gamePlay.word_fragment.concat(getString(
+                    R.string.reasonForWinning_word));
         }
         else {
-            reasonForWinning = gamePlay.word_fragment.concat(" cannot form a word!");
+            reasonForWinning = gamePlay.word_fragment.concat(getString(
+                    R.string.reasonForWinning_not_word));
         }
 
         Intent intent = new Intent(this, WinActivity.class);
@@ -287,7 +265,6 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onStop() {
-        Log.i("MainActivity","In onStop");
         saveGameState();
         super.onStop();
     }
@@ -310,12 +287,9 @@ public class MainActivity extends ActionBarActivity {
         gamePlay.saveGameState(spEditor);
 
         spEditor.apply();
-        Log.i("MainActivity", "Saved preferences");
     }
 
     public void initiateGameState(){
-
-        Log.i("MainActivity","In recallGameState");
 
         SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
 

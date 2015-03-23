@@ -35,7 +35,7 @@
     <Button
         android:text="@string/win_view_ranking_button"
         android:id="@+id/goToRankingButton"
-        android:onClick="toRankingScreen"
+        android:onClick="toRankingActivity"
         android:layout_alignParentBottom="true"
         style="@style/button.big"/>
 

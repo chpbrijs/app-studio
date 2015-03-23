@@ -1,7 +1,6 @@
 package cindy.ghost;
 
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import java.io.Serializable;
 import java.util.Random;
@@ -82,6 +81,7 @@ public class GamePlay implements Serializable{
     public void saveGameState(SharedPreferences.Editor spEditor){
         spEditor.putString("word_fragment", word_fragment);
         spEditor.putBoolean("player1turn", player1turn);
+        spEditor.putBoolean("player1begins", player1begins);
         spEditor.putBoolean("player1wins", player1wins);
         spEditor.putBoolean("game", game);
     }
@@ -89,6 +89,7 @@ public class GamePlay implements Serializable{
     public void recallGameState(SharedPreferences sharedPreferences){
         word_fragment = sharedPreferences.getString("word_fragment", word_fragment);
         player1turn = sharedPreferences.getBoolean("player1turn", player1turn);
+        player1begins = sharedPreferences.getBoolean("player1begins", player1begins);
         player1wins = sharedPreferences.getBoolean("player1wins", player1wins);
         game = sharedPreferences.getBoolean("game", false);
     }

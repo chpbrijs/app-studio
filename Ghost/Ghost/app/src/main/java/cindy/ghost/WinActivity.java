@@ -3,7 +3,6 @@ package cindy.ghost;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,8 +20,6 @@ public class WinActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Log.i("WinScreen", "In onCreate");
 
         super.onCreate(null);
         setContentView(R.layout.activity_win);
@@ -44,9 +41,7 @@ public class WinActivity extends Activity {
         display();
     }
 
-    private void display() {
-
-        Log.i("WinActivity", "In display()");
+    public void display() {
 
         winnerNameTextView.setText(winnerName + " wins!");
         wordResultTextView.setText(reasonForWinning);
@@ -64,6 +59,7 @@ public class WinActivity extends Activity {
     }
 
     public void backToMain(){
+
         intent = new Intent();
         intent.putExtra("newNames", newNames);
         setResult(RESULT_OK, intent);
@@ -74,8 +70,7 @@ public class WinActivity extends Activity {
         backToMain();
     }
 
-    public void toRankingScreen(View view) {
-        Log.i("WinScreen", "In toRankingScreen");
+    public void toRankingActivity(View view) {
 
         intent = new Intent(this, RankingActivity.class);
         intent.putExtra("highScores", highScores);

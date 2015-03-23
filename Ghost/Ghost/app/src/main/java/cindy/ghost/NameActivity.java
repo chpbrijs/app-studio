@@ -3,7 +3,6 @@ package cindy.ghost;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,7 +28,6 @@ public class NameActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("NameScreen","In onCreate");
 
         super.onCreate(savedInstanceState);
 
@@ -61,14 +58,8 @@ public class NameActivity extends Activity {
             allNames = new ArrayList<String>();
         }
 
-        try {
-            player1name = playerNamesIntent.getStringExtra("player1name");
-            player2name = playerNamesIntent.getStringExtra("player2name");
-
-        } catch (NullPointerException npExc){
-            player1name = "";
-            player2name = "";
-        }
+        player1name = playerNamesIntent.getStringExtra("player1name");
+        player2name = playerNamesIntent.getStringExtra("player2name");
 
         setupEditText(player1EditText, player1name);
         setupEditText(player2EditText, player2name);
@@ -80,7 +71,7 @@ public class NameActivity extends Activity {
         }
     }
 
-    private void setupEditText(EditText editText, String player_name){
+    public void setupEditText(EditText editText, String player_name){
         editText.setText(player_name);
         editText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -96,7 +87,7 @@ public class NameActivity extends Activity {
         });
     }
 
-    private void setupSpinner(final Spinner spinner, final EditText nameEditText){
+    public void setupSpinner(final Spinner spinner, final EditText nameEditText){
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, allNames);
@@ -136,7 +127,7 @@ public class NameActivity extends Activity {
         }
     }
 
-    private void startGame(){
+    public void startGame(){
         player1name = player1EditText.getText().toString().toLowerCase();
         player2name = player2EditText.getText().toString().toLowerCase();
 
@@ -154,7 +145,7 @@ public class NameActivity extends Activity {
         }
     }
 
-    private Boolean isValidName(String name){
+    public Boolean isValidName(String name){
 
         int n = name.length();
 

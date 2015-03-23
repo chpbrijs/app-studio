@@ -3,7 +3,6 @@ package cindy.ghost;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -19,7 +18,6 @@ public class LanguageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.i("LanguageActivity","In onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_language);
 
@@ -32,13 +30,10 @@ public class LanguageActivity extends Activity {
 
         Intent intent = getIntent();
         result_language = intent.getStringExtra("current_language");
-        Log.i("LanguageActivity", "Received language " + result_language);
         language_to_radio.get(result_language).toggle();
     }
 
     public void initRadio(final RadioButton radio, final String language){
-
-        Log.i("LanguageActivity","In initRadio");
 
         language_to_radio.put(language, radio);
 
