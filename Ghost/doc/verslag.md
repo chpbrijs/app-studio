@@ -1,5 +1,7 @@
 # Verslag
 
+In dit verslag worden de activities en classes beschreven die in deze app zijn gebruikt aan de hand van screenshots en beschrijvingen van alle methoden.
+
 ## Activities
 
 ### MainActivity
@@ -179,6 +181,56 @@ Check of het woord in all_words staat.
 
 ### GamePlay
 
+##### public GamePlay (Dictionary dict)
+Bij de gamePlay hoort een woordenboek dictionary, die er hier aan toegevoegd wordt. De beginspeler wordt bepaald en reset() wordt aangeroepen.
+
+##### public void reset()
+Resetten van het huidige spel: het woord is "" en de beginspeler is aan de beurt.
+
+##### public void swapBeginPlayer()
+Wisselen van de beginspeler.
+
+##### public void makeMove(Character letter)
+Voeg de nieuwe letter toe aan het woord en roep checkForLost() aan. Als er is gewonnen, wordt de winnende speler bepaald en anders wordt er gewisseld van beurt.
+
+##### private void checkForLost()
+Check of er verloren is door te kijken of het nieuwe fragment een heel woord vormt of doordat het fragment een onmogelijk maakt een heel woord te vormen.
+
+##### public void changeDictionary(Dictionary new_dict)
+Verander van woordenboek.
+
+##### public void saveGameState(SharedPreferences.Editor spEditor)
+Opslaan van de gegevens: het huidige fragment en alle Booleans.
+
+##### public void recallGameState(SharedPreferences sharedPreferences)
+Vind de spelgegevens op een analoge manier als saveGameState.
+
 ### HighScores
 
+##### public HighScores()
 
+Het highScores object wordt geinitialiseerd met een string array 'ranking', dat de volgorde van de namen van de spelers is op basis van score, en een HashMap nameToScore die een naam aan een score verbindt.
+
+##### public void addPlayer(String name)
+Toevoegen van een speler aan de lijst als de speler er nog niet was.
+
+##### public void incrementScoreFor(String name)
+Verhogen van de score van een bepaalde speler. Deze functie roeps updateRankingFor(name) aan.
+
+##### private void updateRankingFor(String name)
+De speler die een hogere score kreeg wordt omhooggeplaatst in de ranking totdat diegene direct erboven een score heeft die minstens even hoog is.
+
+##### public Integer getScoreOf(String name)
+Vind de score van een bepaalde speler.
+
+##### public String makeString(Boolean setMaximum)
+Zet alle informatie van ranking en nameToScore in een highscore-string. Dit wordt gebruikt om het te laten zien in de RankingActivity of om de informatie op te slaan in SharedPreference. Afhankelijk van setMaximum worden alle gegevens erin gezet of alleen de eerste 15.
+
+##### private void findHighScoresFromString(String names_scores)
+Vind informatie over ranking en nameToScore aan de hand van de highscore-string.
+
+##### public void saveGameState(SharedPreferences.Editor spEditor)
+Opslaan van de gegevens in de vorm van een highscore-string en een paar integers.
+
+##### public void recallGameState(SharedPreferences sharedPreferences)
+Vinden van de gegevens analoog aan saveGameState.
