@@ -116,13 +116,44 @@ Om het spel met de huidige namen te spelen kan er op de "Start"-knop worden gedr
 
 <img src='Screenshots/NameActivity/NameActivity2.png' width = '216', height = '384'/>
 
+##### protected void onCreate(Bundle savedInstanceState)
+Initialiseer en haal informatie uit de intent over de huidige spelers en de high scores lijst.
 
+##### public void setupEditText(EditText editText, String player_name)
+Maakt een setOnKeyListener op de editText die startGame() aanroept als er op Enter wordt gedrukt.
+
+##### public void setupSpinner(final Spinner spinner, final EditText nameEditText)
+Maakt een adapter voor de Spinners op basis van de highScores gegevens.
+
+##### public void startGame()
+Maakt een intent om naar MainActivity te gaan met player1name en player2name.
+
+##### public Boolean isValidName(String name)
+Check of de keuze voor de namen valide is.
+
+##### public String toNameStyle(String name)
+Bewerken van een string zodat de eerste letter van een woord een hoofdletter is en de rest kleine letters.
+
+##### public void clearEditText(View view)
+Leegmaken van een EditText
+
+##### public void startButtonClicked(View view)
+Wordt aangeroepen als er op de Start-knop wordt gedrukt en gaat naar startGame().
 
 ### LanguageActivity
 
 Tijdens een spel kan een speler ervoor kiezen om de taal te veranderen. Dan komt de speler in dit scherm, waarbij er gekozen kan worden tussen talen door middel van RadioButtons in een RadioGroup. De mogelijke talen zijn Nederlands en Engels. Als een van de talen is aangevinkt, gaat de app terug naar MainActivity.
 
 <img src='Screenshots/LanguageActivity/LanguageActivity0.png' width = '216', height = '384'/>
+
+##### protected void onCreate(Bundle savedInstanceState)
+Initialiseren van de widgets en aanroepen van initRadio voor Engels en Nederlands. De huidige taal wordt gevonden door de string extra in de intent.
+
+##### public void initRadio(final RadioButton radio, final String language)
+Zet een setOnClickListener op de RadioButton. Als de RadioButton wordt aangevinkt, dan wordt de bijbehorende taal onthouden en sendBackResult() aangeroepen.
+
+##### public void sendBackResult()
+Maken van een intent met de nieuw gekozen taal en ga terug naar MainActivity.
 
 ## Classes
 
